@@ -18,26 +18,37 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  **/
 public class LockReadWrite {
   public static void main(String[] args) {
-    final Data data = new Data();
-    /*读写各起3个线程*/
-    for (int i = 0; i < 3; i++) {
-      new Thread(new Runnable() {
-        @Override
-        public void run() {
-          for (int j = 1; j <= 5; j++) {
-            data.get();
+
+      StringBuilder re = new StringBuilder("AsvjdGclUv");
+      int length = re.length();
+      for (int j = 0; j < length; j++) {
+          if (Character.isUpperCase(re.charAt(j))){
+              re = re.append(re.charAt(j)).deleteCharAt(j);
+              j--;length--;
           }
-        }
-      }, "read" + i).start();
-      new Thread(new Runnable() {
-        @Override
-        public void run() {
-          for (int j = 1; j <= 5; j++) {
-            data.set(j);
-          }
-        }
-      }, "write" + i).start();
-    }
+      }
+      System.out.println(re);
+
+//    final Data data = new Data();
+//    /*读写各起3个线程*/
+//    for (int i = 0; i < 3; i++) {
+//      new Thread(new Runnable() {
+//        @Override
+//        public void run() {
+//          for (int j = 1; j <= 5; j++) {
+//            data.get();
+//          }
+//        }
+//      }, "read" + i).start();
+//      new Thread(new Runnable() {
+//        @Override
+//        public void run() {
+//          for (int j = 1; j <= 5; j++) {
+//            data.set(j);
+//          }
+//        }
+//      }, "write" + i).start();
+//    }
   }
 }
 
