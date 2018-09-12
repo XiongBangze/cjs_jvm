@@ -79,8 +79,9 @@ public class ThreadAddInt {
         for (int i = 0; i <10000 ; i++) {
             Thread thread = new Thread(runnable3);
             thread.start();
+            System.out.println(System.currentTimeMillis()+"===="+ticket);
         }
-        System.out.println(System.currentTimeMillis()-l+"====");
+        System.out.println(System.currentTimeMillis()+"===="+ticket);
         Thread.sleep(200000);
         System.out.println(ticket);
     }
