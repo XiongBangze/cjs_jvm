@@ -85,40 +85,40 @@ public class ExcelRead {
         if (cell == null) {
             return "";
         }
-        switch (cell.getCellType()) {
-
-            //数字
-            case HSSFCell.CELL_TYPE_NUMERIC:
-
-                //日期格式的处理
-                if (HSSFDateUtil.isCellDateFormatted(cell)) {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                    return sdf.format(HSSFDateUtil.getJavaDate(cell.getNumericCellValue())).toString();
-                }
-
-                return String.valueOf(cell.getNumericCellValue());
-            //return df.format(cell.getNumericCellValue());
-
-            //字符串
-            case HSSFCell.CELL_TYPE_STRING:
-                return cell.getStringCellValue();
-
-            //公式
-            case HSSFCell.CELL_TYPE_FORMULA:
-                return cell.getCellFormula();
-
-            //空白
-            case HSSFCell.CELL_TYPE_BLANK:
-                return "";
-
-            //布尔取值
-            case HSSFCell.CELL_TYPE_BOOLEAN:
-                return cell.getBooleanCellValue() + "";
-
-            //错误类型
-            case HSSFCell.CELL_TYPE_ERROR:
-                return cell.getErrorCellValue() + "";
-        }
+//        switch (cell.getCellType()) {
+//
+//            //数字
+//            case HSSFCell.CELL_TYPE_NUMERIC:
+//
+//                //日期格式的处理
+//                if (HSSFDateUtil.isCellDateFormatted(cell)) {
+//                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//                    return sdf.format(HSSFDateUtil.getJavaDate(cell.getNumericCellValue())).toString();
+//                }
+//
+//                return String.valueOf(cell.getNumericCellValue());
+//            //return df.format(cell.getNumericCellValue());
+//
+//            //字符串
+//            case HSSFCell.CELL_TYPE_STRING:
+//                return cell.getStringCellValue();
+//
+//            //公式
+//            case HSSFCell.CELL_TYPE_FORMULA:
+//                return cell.getCellFormula();
+//
+//            //空白
+//            case HSSFCell.CELL_TYPE_BLANK:
+//                return "";
+//
+//            //布尔取值
+//            case HSSFCell.CELL_TYPE_BOOLEAN:
+//                return cell.getBooleanCellValue() + "";
+//
+//            //错误类型
+//            case HSSFCell.CELL_TYPE_ERROR:
+//                return cell.getErrorCellValue() + "";
+//        }
 
         return "";
     }
