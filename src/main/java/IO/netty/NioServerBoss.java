@@ -1,24 +1,20 @@
 package IO.netty;
 
+import IO.netty.pool.Boss;
+import IO.netty.pool.NioSelectorRunnablePool;
+import IO.netty.pool.Worker;
+
 import java.io.IOException;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.*;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.Executor;
-
-import com.cn.pool.Boss;
-import com.cn.pool.NioSelectorRunnablePool;
-import com.cn.pool.Worker;
 /**
  * boss实现类
  * @author -琴兽-
  *
  */
-public class NioServerBoss extends AbstractNioSelector implements Boss{
+public class NioServerBoss extends AbstractNioSelector implements Boss {
 
 	public NioServerBoss(Executor executor, String threadName, NioSelectorRunnablePool selectorRunnablePool) {
 		super(executor, threadName, selectorRunnablePool);

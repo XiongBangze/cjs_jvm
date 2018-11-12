@@ -1,5 +1,8 @@
 package IO.netty;
 
+import IO.netty.pool.NioSelectorRunnablePool;
+import IO.netty.pool.Worker;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
@@ -9,15 +12,12 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.Executor;
-
-import com.cn.pool.NioSelectorRunnablePool;
-import com.cn.pool.Worker;
 /**
  * worker实现类
  * @author -琴兽-
  *
  */
-public class NioServerWorker extends AbstractNioSelector implements Worker{
+public class NioServerWorker extends AbstractNioSelector implements Worker {
 
 	public NioServerWorker(Executor executor, String threadName, NioSelectorRunnablePool selectorRunnablePool) {
 		super(executor, threadName, selectorRunnablePool);
