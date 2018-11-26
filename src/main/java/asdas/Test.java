@@ -1,5 +1,8 @@
 package asdas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Test {
 
 //    public static void main(String[] args) {
@@ -24,4 +27,21 @@ public class Test {
      * 6: iload_2         //加载局部变量表的第2个变量到操作数栈顶
      * 7: ireturn         //返回
      */
+
+    public static void main(String[] args) {
+        List<Integer> aa = new ArrayList<>();
+
+        aa.add(1);
+        aa.add(5);
+        aa.add(2);
+        aa.add(3);
+        for (Integer integer:aa) {
+            if (integer == 2){
+                aa.remove(integer);
+            }
+            int d = integer +2;
+        }
+        System.out.println(aa);
+    }
+
 }
