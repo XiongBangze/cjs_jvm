@@ -14,10 +14,6 @@ import java.util.UUID;
 public class HeaderUtil {
     private static String appId;
     private static String token;
-    private static String botaoTravelAppId;
-    private static String botaoTravelToken;
-    private static String jinjiangTravelAppId;
-    private static String jinjiangTravelToken;
 
     @Value(value = "${member.appId}")
 	public void setAppId(String appId) {
@@ -29,23 +25,6 @@ public class HeaderUtil {
 		HeaderUtil.token = token;
 	}
 
-	@Value("member.botao.travel.appId")
-	public static void setBotaoTravelAppId(String botaoTravelAppId) {
-		HeaderUtil.botaoTravelAppId = botaoTravelAppId;
-	}
-
-	@Value("member.botao.travel.token")
-	public static void setBotaoTravelToken(String botaoTravelToken) {
-		HeaderUtil.botaoTravelToken = botaoTravelToken;
-	}
-	@Value("member.jinjiang.appId")
-	public static void setJinjiangTravelAppId(String jinjiangTravelAppId) {
-		HeaderUtil.jinjiangTravelAppId = jinjiangTravelAppId;
-	}
-	@Value("member.jinjiang.token")
-	public static void setJinjiangTravelToken(String jinjiangTravelToken) {
-		HeaderUtil.jinjiangTravelToken = jinjiangTravelToken;
-	}
 
 	private static RsaClientUtil rsaClientUtils = new RsaClientUtil();
 
@@ -90,16 +69,6 @@ public class HeaderUtil {
 	public static Map<String,String> getHeadersByChannelCode(String apigwkey, String remoteIp,String channelCode) {
 		Map<String, String> headers = getHeaders(apigwkey, remoteIp);
 
-		if (channelCode.equals(ChannelCodeEnum.CA00003)){
-			headers.put("x-appid", botaoTravelAppId);
-			headers.put("x-token",botaoTravelToken);
-			headers.put("x-caller-time", System.currentTimeMillis()+"");
-		}
-		if (channelCode.equals(ChannelCodeEnum.CA00046)){
-			headers.put("x-appid", jinjiangTravelAppId);
-			headers.put("x-token",jinjiangTravelToken);
-			headers.put("x-caller-time", System.currentTimeMillis()+"");
-		}
 		return headers;
 	}
 
