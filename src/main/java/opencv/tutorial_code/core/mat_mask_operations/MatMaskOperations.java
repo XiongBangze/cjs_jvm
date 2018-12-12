@@ -12,7 +12,7 @@ class MatMaskOperationsRun {
 
     public void run(String[] args) {
 
-        String filename = "C:\\Users\\bangze.xiong\\Desktop\\tupian\\lena.jpg";
+        String filename = "D:\\play\\cjs_jvm\\src\\main\\java\\opencv\\Images\\lena.jpg";
 
         int img_codec = Imgcodecs.IMREAD_COLOR;
         if (args.length != 0) {

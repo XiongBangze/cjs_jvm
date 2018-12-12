@@ -23,8 +23,8 @@ class AddingImagesRun{
             alpha = input;
 
         //! [load]
-        src1 = Imgcodecs.imread("../../images/LinuxLogo.jpg");
-        src2 = Imgcodecs.imread("../../images/WindowsLogo.jpg");
+        src1 = Imgcodecs.imread("D:\\play\\cjs_jvm\\src\\main\\java\\opencv\\Images\\LinuxLogo.jpg");
+        src2 = Imgcodecs.imread("D:\\play\\cjs_jvm\\src\\main\\java\\opencv\\Images\\WindowsLogo.jpg");
         //! [load]
 
         if( src1.empty() == true ){ System.out.println("Error loading src1"); return;}

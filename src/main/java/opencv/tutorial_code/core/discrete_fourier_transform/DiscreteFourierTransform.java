@@ -20,7 +20,7 @@ class DiscreteFourierTransformRun{
 
         help();
 
-        String filename = ((args.length > 0) ? args[0] : "../data/lena.jpg");
+        String filename = ((args.length > 0) ? args[0] : "D:\\play\\cjs_jvm\\src\\main\\java\\opencv\\Images\\lena.jpg");
 
         Mat I = Imgcodecs.imread(filename, Imgcodecs.IMREAD_GRAYSCALE);
         if( I.empty() ) {
