@@ -15,10 +15,10 @@ public class TestHDFSClient {
         Configuration conf = new Configuration();
 
         //这里指定使用的是 hdfs文件系统
-        conf.set("fs.defaultFS", "hdfs://192.168.149.128:8888");
+        conf.set("fs.defaultFS", "");
 
         //通过这种方式设置java客户端身份
-        FileSystem fs=FileSystem.get(new URI("hdfs://192.168.149.128:8888"), conf, "root");
+        FileSystem fs=FileSystem.get(new URI(""), conf, "root");
 
         //或者使用下面的方式设置客户端身份
         //FileSystem fs = FileSystem.get(new URI("hdfs://master:9000"),conf,"root");
