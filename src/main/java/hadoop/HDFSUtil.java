@@ -13,10 +13,10 @@ import org.apache.hadoop.io.IOUtils;
 public class HDFSUtil {
 
     public  static   Configuration conf = new Configuration();
-    private static  String HDFS_URI = "hdfs://192.168.149.128:8888";
+    private static  String HDFS_URI = "";
     private static  String USR_PERMISSION = "root";
     static {
-        conf.set("fs.defaultFS", "hdfs://192.168.149.128:8888");
+        conf.set("fs.defaultFS", "");
     }
     private HDFSUtil() {
     }
