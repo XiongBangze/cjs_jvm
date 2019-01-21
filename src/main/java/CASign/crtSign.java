@@ -48,7 +48,7 @@ public class crtSign {
         String srcData = "张三";
 
         byte[] bytes = rsaUtils1.encryptByPublicKey(srcData.getBytes(), new Base64Utils().encode(publicKey.getEncoded()));
-        System.out.println("加密之后的内容:" + new String(bytes));
+        System.out.println("加密之后的内容:" + new Base64Utils().encode(bytes));
 
         byte[] bytes1 = rsaUtils1.decryptByPrivateKey(bytes, new Base64Utils().encode(privateKey.getEncoded()));
         System.out.println("解密之后的内容 : " + new String(bytes1));
@@ -56,11 +56,11 @@ public class crtSign {
 
         String priSign = "你好";
         byte[] jiamiDate = rsaUtils1.encryptByPrivateKey(priSign.getBytes(), privateKey);
-        System.out.println("私钥加密之后的内容 : " + new String(jiamiDate));
+        System.out.println("私钥加密之后的内容 : " + new Base64Utils().encode(jiamiDate));
         byte[] bytes2 = rsaUtils1.decryptByPublicKey(jiamiDate, publicKey);
         System.out.println("公钥解密之后的内容 : " + new String(bytes2));
         byte[] sign = rsaUtils1.sign(priSign.getBytes(),  privateKey);
-        System.out.println("用私钥对信息生成数字签名之后的内容 : " + new String(sign));
+        System.out.println("用私钥对信息生成数字签名之后的内容 : " + new Base64Utils().encode(sign));
         boolean verify = rsaUtils1.verify(jiamiDate, publicKey, sign);
         System.out.println("校验数字签名 : " + verify);
 
