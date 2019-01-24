@@ -1,19 +1,19 @@
 package CASign;
+
 import org.apache.commons.codec.binary.Hex;
 
 import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import java.security.Signature;
-import java.security.interfaces.RSAPrivateKey;
-import java.security.interfaces.RSAPublicKey;
-import java.util.Base64;
 import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 
 public class crtSign {
 
@@ -39,6 +39,9 @@ public class crtSign {
         System.out.println("==============================================================================");
 
         RSAUtils rsaUtils1 = new RSAUtils();
+//        Map<String, Object> map = rsaUtils1.genKeyPair();
+//        RSAPublicKey publicKey1 = (RSAPublicKey)  map.get("RSAPublicKey");
+//        RSAPrivateKey privateKey1 = (RSAPrivateKey)  map.get("RSAPrivateKey");
         String encrypt = rsaUtils1.encrypt("之后之后之后", publicKey);
         System.out.println("=====================================encrypt========================================="+encrypt);
         String decrypt = rsaUtils1.decrypt(encrypt, privateKey);
